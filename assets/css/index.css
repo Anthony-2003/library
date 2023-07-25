@@ -99,7 +99,6 @@ body {
    .hero__texts{
     display: flex;
     flex-direction: column;
-    text-align: justify;
     width: 100%;
     align-items: center;
     margin-top: 0;
