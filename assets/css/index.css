@@ -32,6 +32,28 @@ body {
     font-weight: 600;
 }
 
+.navList__item {
+    display: inline-block;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.navList__item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.navList__item:hover::after {
+    transform: scaleX(1);
+}
+
 .navList__link {
     text-decoration: none;
     color: black;
@@ -66,17 +88,45 @@ body {
 }
 
 .hero__link {
-    text-decoration: none;
     color: #fff;
-    background-color: #000;
-    padding: 1.5em 2em;
+    font-size: 20px;
     font-weight: 600;
-    border-radius: 50px;
-    display: block;
-    margin-top: 2em;
-    width: max-content;
+    padding: 1em 1.5em;
+    background: #000;
     position: relative;
+    border: 2px solid #000;
+    outline: 1px solid;
+    outline-color: rgba(0,0,0, 0.4);
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+    text-decoration: none;
+    display: block;
+    margin-top: 1em;
+    width: max-content;
+    border-radius: 20px;
 }
+
+.hero__link:before {
+    content:"";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 1s ease;
+  }
+  
+  .hero__link:hover {
+    box-shadow: inset 0 0 20px rgba(0,0,0, 0.5), 0 0 20px rgba(0,0,0, 0.4);
+    outline-color: rgba(49, 138, 172, 0);
+    outline-offset: 80px;
+    text-shadow: 1px 1px 6px #fff;
+  }
+
+  .hero__link:hover:before {
+    width: 100%;
+    }
+  
 
 .hero__img {
     height: 700px;
@@ -84,42 +134,40 @@ body {
 
 /*Responsive*/
 
-@media (max-width: 900px){
-   .hero {
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-   }
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
 
 
-   .hero__title{
-    margin-block: .5em;
-   }
+    .hero__title {
+        margin-block: .5em;
+    }
 
-   .hero__texts{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    margin-top: 0;
-   }
+    .hero__texts {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin-top: 0;
+    }
 
-   .hero__link{
-     margin-block: 1em;
-   }
+    .hero__link {
+        margin-block: 1em;
+    }
 
-   .hero__img__container{
-    text-align: center;
-   }
+    .hero__img__container {
+        text-align: center;
 
-   .hero__img{
-    width: 100%;
-    height: 500px;
-    margin-top: 1em;
-   }
-}
+    }
 
-@media (max-width: 800px) {
+    .hero__img {
+        width: 100%;
+        height: 500px;
+        margin-top: 1em;
+    }
 
     .navList {
         position: fixed;
@@ -142,12 +190,14 @@ body {
         margin-top: .5em;
     }
 
-    .nav__toggle {
+    .nav__toggle,
+    .categories__toggle {
         display: flex;
         flex-direction: column;
     }
 
-    .nav__toggle__line {
+    .nav__toggle__line, 
+    .categories__toggle__line {
         width: 30px;
         height: 4px;
         margin-bottom: 5px;
@@ -157,15 +207,18 @@ body {
         transition: transform 0.3s ease-in-out;
     }
 
-    .close .nav__toggle__line {
+    .close .nav__toggle__line,
+    .close .categories__toggle__line {
         transform: rotate(45deg) translate(0px, 0px);
     }
 
-    .close .nav__toggle__line:nth-child(2) {
+    .close .nav__toggle__line:nth-child(2),
+    .close .categories__toggle__line:nth-child(2) {
         display: none;
     }
 
-    .close .nav__toggle__line:nth-child(3) {
+    .close .nav__toggle__line:nth-child(3), 
+    .close .categories__toggle__line:nth-child(3) {
         transform: rotate(-45deg) translate(-5px, 1px);
     }
 
@@ -173,10 +226,9 @@ body {
         transform: translateX(0);
         bottom: 0;
     }
-
 }
 
-@media (max-width: 475px){
+@media (max-width: 475px) {
     .logo {
         width: 150px;
     }
@@ -185,4 +237,3 @@ body {
         top: 73px;
     }
 }
-
