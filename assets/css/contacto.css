@@ -1,0 +1,37 @@
+.form {
+    background-color: rgba(27, 27, 50, 0.8);
+    padding: 3.5em;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+#description {
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+.form__group__input,
+.form__group__comment {
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 1em;
+}
+
+.form__group__input{
+    height: 35px;
+}
+
+button {
+    padding: 1em;
+    border: none;
+    background-color: rgb(55, 175, 101);
+    color: inherit;
+}

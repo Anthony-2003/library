@@ -1,9 +1,8 @@
-
 .logo--library {
     margin-left: 1em;
 }
 
-.nav__toggle--library{
+.nav__toggle--library {
     margin-right: 1em;
 }
 
@@ -34,27 +33,24 @@
     border-radius: 20px;
 }
 
-.categoriesBookContainer{
+/*categories style*/
+
+.categoriesBookContainer {
     margin-inline: 1em;
 }
 
 .categories {
-    background-color: #fff;
-    width: 260px;
-    height: 270px;
+    background-color: #271C19;
+    color: #fff3ec;
+    width: 350px;
+    height: 250px;
     margin-top: 1em;
     border-radius: 10px;
 }
 
 .categoriesHead {
     display: flex;
-    border-bottom: 1px solid black;
-}
-
-.categoriesIcon {
-    width: 35px;
-    border-right: 2px solid black;
-    padding: 1em;
+    border-bottom: 1px solid #fff3ec;
 }
 
 .categoriesTittle {
@@ -65,7 +61,7 @@
 
 .categoriesBody {
     padding: 1em;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .categoriesBody__check {
@@ -73,7 +69,45 @@
     transform: scale(1.2);
 }
 
-.booksContainer {
+.categoriesBody__check {
+    display: none;
+}
+
+.checkLabel {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #fff3ec;
+}
+
+.checkLabel::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff3ec;
+    background-color: #271C19;
+}
+
+.categoriesBody__check:checked+.checkLabel::before {
+    background-color: #fff3ec;
+}
+
+.categoriesBody__check:checked+.checkLabel::before {
+    content: "\2713";
+    text-align: center;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+/*Containers styles*/
+
+.booksContainer,
+.authorsContainer {
     width: 100%;
     padding-left: 1em;
     display: grid;
@@ -84,23 +118,43 @@
     transition: opacity 0.3s ease-in-out;
 }
 
-.bookCard {
-    color: #0C1220;
-    background-color: #fff;
+.authorsContainer {
+    padding-left: 0;
+}
+
+.bookCard,
+.authorCard {
+    color: #fff3ec;
+    background-color: #271C19;
     margin-top: 1em;
     display: flex;
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
+    border-radius: 10px;
 }
 
 .bookCard__img {
     width: 190px;
 }
 
-.bookCard__information {
+.bookCard__img,
+.authorCard__img {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.authorCard__img {
+    height: 100%;
+    width: 250px;
+    object-fit: cover;
+}
+
+.bookCard__information,
+.authorCard__information {
     width: 100%;
     padding-inline: 1em;
 }
+
 
 .bookCard__information__price {
     font-size: 1.5rem;
@@ -121,6 +175,8 @@
         width: 100%;
         height: auto;
         transform: translateY(0);
+        background-color: #271C19;
+        color: #fff3ec;
     }
 
     .categoriesHead {
@@ -155,19 +211,30 @@
 
 }
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 425px) {
 
-  .bookCard {
-    flex-direction: column;
-  }
+    .search {
+        font-size: 12px;
+    }
 
-  .bookCard__img{
-    width: 100%;
-  }
+    .bookCard,
+    .authorCard {
+        flex-direction: column;
+    }
 
-  .bookCard__information{
-   padding-inline: 1em;
-   width: auto;
-  }
+    .bookCard__img,
+    .authorCard__img {
+        width: 100%;
+        border-radius: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+
+    }
+
+    .bookCard__information,
+    .authorCard__information {
+        padding-inline: 1em;
+        width: auto;
+    }
 
 }

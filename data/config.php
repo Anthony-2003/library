@@ -1,5 +1,5 @@
 <?php
-// config.php
-include 'data/db.php';
+
+include 'db.php';
 
 $dbConnection = DbManage::getInstance('root', '', 'libreria')->getConnection();

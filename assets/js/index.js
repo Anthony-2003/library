@@ -1,7 +1,5 @@
 const navList = document.getElementById("_navList");
 const btnToggle = document.getElementById("_toggle");
-const btnCategoriesToggle = document.getElementById("_categoriestoggle");
-const categoriesBody = document.getElementById("categoriesBody");
 
 function toggleElement(element) {
   element.classList.toggle("open");
@@ -23,10 +21,10 @@ btnToggle.addEventListener('click', () => {
   navList.classList.contains('open') ? disableScroll() : enableScroll(); 
 });
 
-btnCategoriesToggle.addEventListener('click', () => {
+/*btnCategoriesToggle.addEventListener('click', () => {
   toggleElement(categoriesBody);
   toggleElement(btnCategoriesToggle);
-});
+});*/
 
 
 

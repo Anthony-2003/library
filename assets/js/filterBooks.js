@@ -72,18 +72,18 @@ document.addEventListener("DOMContentLoaded", function() {
     // Iterar sobre los datos y construir la estructura de la tarjeta de libro
     data.forEach(book => {
 
-      const bookCard = document.createElement('div');
-      bookCard.classList.add('bookCard');
+      const authorCard = document.createElement('div');
+      authorCard.classList.add('authorCard');
 
       setTimeout(() => {
-        bookCard.style.opacity = 1; // Cambiar la opacidad a 1 (completamente opaco) para mostrar la tarjeta con una transición suave
+        authorCard.style.opacity = 1; // Cambiar la opacidad a 1 (completamente opaco) para mostrar la tarjeta con una transición suave
       }, 10);
   
       const bookImage = document.createElement('img');
       bookImage.src = book.fotografia;
       bookImage.alt = book.titulo;
       bookImage.classList.add('bookCard__img');
-      bookCard.appendChild(bookImage);
+      authorCard.appendChild(bookImage);
   
       const bookInformation = document.createElement('div');
       bookInformation.classList.add('bookCard__information');
@@ -114,8 +114,8 @@ document.addEventListener("DOMContentLoaded", function() {
       bookDate.textContent = book.fecha_pub.split(' ')[0];
       bookInformation.appendChild(bookDate);
   
-      bookCard.appendChild(bookInformation);
-      booksContainer.appendChild(bookCard);
+      authorCard.appendChild(bookInformation);
+      booksContainer.appendChild(authorCard);
     });
 
   }
